@@ -1,62 +1,111 @@
+# 🏥 Reliability-Aware Human–AI Collaboration for Safe Medical Diagnostics
 
-🔍 Overview
+## 📌 Overview
+This project presents a **Reliability-Aware Human–AI Collaborative Framework** for medical diagnostics.  
+Unlike traditional AI systems that directly map predictions to decisions, this system introduces a **risk-based workflow** that integrates:
 
-This project presents a Reliability-Aware Human-AI Collaborative Framework for medical diagnostics. Unlike traditional AI systems that directly map predictions to decisions, this system introduces a risk-based workflow that incorporates uncertainty and clinical severity to guide human decision-making.
+- Prediction probability  
+- Model uncertainty  
+- Clinical severity  
 
-🚨 Problem
+to guide **safe and informed human decision-making**.
 
+---
+
+## ⚠️ Problem Statement
 Conventional medical AI systems:
-Rely heavily on prediction probability
-Ignore uncertainty and clinical consequences
-Encourage automation bias
-Fail to ensure decision safety
 
-💡 Solution
+- Rely heavily on prediction probability  
+- Ignore uncertainty and clinical consequences  
+- Encourage automation bias  
+- Fail to ensure decision safety  
 
-This project proposes a Risk-Tiered Human-in-the-Loop (HITL) framework that:
-Computes risk using probability, uncertainty, and severity
-Adjusts decisions based on prediction reliability
-Assigns priority levels (Routine / Review / Urgent)
-Ensures clinician involvement in critical cases
+---
 
-⚙️ Key Features
+## 💡 Proposed Solution
+We propose a **Risk-Tiered Human-in-the-Loop (HITL) framework** that:
 
-CNN-based medical image classification (Pneumonia detection)
-Monte Carlo Dropout for uncertainty estimation
-Reliability-aware risk scoring
-Human-in-the-loop decision support
-Interactive Streamlit dashboard
+- Computes risk using **probability, uncertainty, and severity**
+- Adjusts decisions based on **prediction reliability**
+- Assigns priority levels:
+  - 🟢 Routine  
+  - 🟡 Review  
+  - 🔴 Urgent  
+- Ensures **clinician involvement in critical cases**
 
-Real-time comparison:
-Traditional AI vs Collaborative AI
+---
 
-📊 Key Results
+## ⚙️ Key Features
 
-Missed critical cases reduced by ~23%
-Unnecessary escalations reduced by ~18%
-Review efficiency improved by ~27.1%
-No change in baseline accuracy (~97.4%)
+- 🧠 CNN-based medical image classification (Pneumonia Detection)
+- 📊 Monte Carlo Dropout for uncertainty estimation
+- 📈 Reliability-aware risk scoring mechanism
+- 👨‍⚕️ Human-in-the-loop decision support system
+- 📊 Interactive Streamlit dashboard
+- 🔄 Real-time comparison:
+  **Traditional AI vs Collaborative AI**
 
-🎯 Key Insight
+---
 
-This project demonstrates that workflow design, not just model accuracy, determines clinical safety.
+## 📊 Key Results
 
-🧰 Tech Stack
+- ✅ **Accuracy:** 95%
+- 🔻 **Missed critical cases:** ↓ 73.5%
+- 🚫 **False urgent alerts:** ↓ 100%
+- ⚡ **Review efficiency:** ↑ 27.1%
 
-Python
-PyTorch
-Streamlit
-NumPy, OpenCV, Matplotlib
+> ⚠️ Note: Improvements achieved **without increasing model accuracy**, highlighting the importance of workflow design.
 
-📁 Dataset
+---
 
-Chest X-ray Pneumonia dataset (Kaggle)
-Used for rapid prototyping and demonstration
+## 🎯 Key Insight
+> **Clinical safety is determined by workflow design, not just model accuracy.**
 
-🚀 How to Run
+---
+
+## 🛠️ Tech Stack
+
+- Python  
+- PyTorch  
+- Streamlit  
+- NumPy  
+- OpenCV  
+- Matplotlib  
+
+---
+
+## 📂 Dataset
+
+- Chest X-ray Pneumonia Dataset (Kaggle)  
+- Used for rapid prototyping and demonstration  
+
+---
+
+## ▶️ How to Run
+
+```bash
 pip install -r requirements.txt
 streamlit run app.py
+```
+---
+## 📊 System Workflow
+Image → Model Prediction → Uncertainty Estimation → Risk Scoring → Priority Assignment → Human Decision
 
-⚠️ Note
+---
+## ⚠️ Disclaimer
 
-This is a research-oriented prototype intended to demonstrate Human-AI collaboration, not a clinical diagnostic tool.
+This is a research-oriented prototype designed to demonstrate
+Human–AI collaboration, not a clinical diagnostic tool.
+---
+
+## ⭐ Why This Project Matters
+
+Moves AI from decision-maker → decision-support system
+
+Reduces critical diagnostic failures
+
+Prevents automation bias
+
+Improves clinical safety without changing model accuracy
+
+---
