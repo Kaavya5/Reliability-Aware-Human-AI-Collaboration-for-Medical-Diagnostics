@@ -231,11 +231,23 @@ st.markdown("Comparing Cohort Performance: Traditional AI (Autonomous) vs Collab
 def get_cohort_data():
     np.random.seed(42)  # Maintain stable metrics
     n = 1000
+    
+    # Generate ground truth
+    actual_positive = np.random.choice([0, 1], p=[0.8, 0.2], size=n)
+    
+    # Generate AI probabilities that are largely accurate (e.g. ~85% accuracy)
+    # If positive, skew probabilities towards 1.0. If negative, skew towards 0.0
+    ai_prob = np.where(
+        actual_positive == 1,
+        np.random.beta(a=8, b=2, size=n),  # Mean ~0.8
+        np.random.beta(a=2, b=8, size=n)   # Mean ~0.2
+    )
+    
     return pd.DataFrame({
         "Patient_ID": range(n),
-        "Actual_Positive": np.random.choice([0, 1], p=[0.8, 0.2], size=n), 
-        "AI_Prob": np.random.uniform(0, 1, size=n),
-        "AI_Uncertainty": np.random.uniform(0, 0.5, size=n),
+        "Actual_Positive": actual_positive, 
+        "AI_Prob": ai_prob,
+        "AI_Uncertainty": np.random.uniform(0, 0.5, size=n), # Keep uncertainty random for demo spread
         "Severity": np.random.uniform(1, 5, size=n)
     })
 
