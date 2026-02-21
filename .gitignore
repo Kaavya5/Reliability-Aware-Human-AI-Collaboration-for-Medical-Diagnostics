@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyTorch Checkpoints
+*.pth
+
+# Virtual Environments
+venv/
+env/
+.env
+
+# Streamlit specific
+.streamlit/
